@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Garage Service | Chapa, pintura y microbollos en Córdoba</title>
-<meta name="description" content="Taller de chapa, pintura, microbollos y mecánica integral en Córdoba. Procesos de calidad, áreas separadas, pintura Glasurit y fecha de entrega confirmada desde el presupuesto.">
+<meta name="description" content="Taller de chapa, pintura, microbollos y mecánica integral en Córdoba. Áreas separadas, pintura Glasurit, banco Cellete y fecha de entrega confirmada desde el presupuesto.">
 <!-- Maqueta: quitar noindex cuando el sitio pase a garageservice.com.ar -->
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0D1626">
+<meta name="theme-color" content="#0052F1">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <meta property="og:title" content="Garage Service · Precisión que se ve.">
@@ -24,7 +24,7 @@
 <link rel="preload" as="image" href="assets/img/recorte-auto-estudio.webp">
 <link rel="stylesheet" href="styles.css">
 <script>
-(function(d){d.classList.add('js');try{var q=location.search,f=/[?&]intro\b/.test(q),n=/nointro/.test(q),rm=matchMedia('(prefers-reduced-motion: reduce)').matches;if(f||(!n&&!rm&&!sessionStorage.getItem('gs-intro')))d.classList.add('intro-on')}catch(e){}})(document.documentElement);
+(function(d){d.classList.add('js');try{var q=location.search,f=/[?&]intro\b/.test(q),n=/nointro/.test(q),rm=matchMedia('(prefers-reduced-motion: reduce)').matches;if(d.animate&&(f||(!n&&!rm&&!location.hash&&!sessionStorage.getItem('gs-intro'))))d.classList.add('intro-on')}catch(e){}})(document.documentElement);
 </script>
 <script type="application/ld+json">
 {
@@ -33,431 +33,363 @@
   "name": "Garage Service",
   "description": "Chapa, pintura, microbollos y mecánica integral en Córdoba.",
   "url": "https://www.garageservice.com.ar/",
-  "image": "https://www.garageservice.com.ar/assets/og.jpg",
+  "image": "https://elmaxiromero999-hue.github.io/garage-service/assets/og.jpg",
+  "telephone": "+54 9 351 234-1761",
+  "email": "info@garageservice.com.ar",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Armada Argentina 269",
+    "streetAddress": "Av. Armada Argentina 269, B° Las Flores",
     "addressLocality": "Córdoba",
     "addressRegion": "Córdoba",
     "addressCountry": "AR"
   },
-  "sameAs": ["https://www.instagram.com/thegarageservice/"]
+  "sameAs": ["https://www.instagram.com/thegarageservice/", "https://www.facebook.com/garageservicecba"]
 }
 </script>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
-<div class="progress" aria-hidden="true"><span></span></div>
 
-<header class="header" id="top">
+<header class="header">
   <div class="header__in wrap">
-    <a class="brand" href="#top" aria-label="Garage Service, inicio">
-      <img src="assets/logo/logo-horizontal-blanco.svg" alt="Garage Service" width="190" height="30">
+    <a class="brand" href="#inicio" aria-label="Garage Service, ir al inicio">
+      <img src="assets/logo/logo-horizontal.svg" alt="Garage Service" width="190" height="30">
     </a>
-    <nav class="nav" id="nav" aria-label="Principal">
+    <nav class="nav" aria-label="Principal">
+      <a href="#nosotros">Nosotros</a>
       <a href="#servicios">Servicios</a>
-      <a href="#taller">El taller</a>
-      <a href="#proceso">Proceso</a>
+      <a href="#como-trabajamos">Cómo trabajamos</a>
       <a href="#seguros">Seguros</a>
-      <a href="#flotas">Flotas</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn btn--sm btn--blue header__cta" data-wa="turno" href="https://wa.me/549351XXXXXXX">Pedí turno</a>
-    <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span><span></span></button>
+    <a class="btn btn--blue btn--sm header__cta" data-wa="turno" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedí turno</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><span class="burger__ico" aria-hidden="true"><i></i><i></i></span><span class="burger__txt">Menú</span></button>
   </div>
 </header>
 
+<!-- Menú del celular: fuera del header para que ocupe toda la pantalla -->
+<div class="menu" id="menu" hidden>
+  <nav class="menu__nav" aria-label="Menú">
+    <a href="#nosotros"><span>01</span>Nosotros</a>
+    <a href="#servicios"><span>02</span>Servicios</a>
+    <a href="#como-trabajamos"><span>03</span>Cómo trabajamos</a>
+    <a href="#seguros"><span>04</span>Seguros</a>
+    <a href="#flotas"><span>05</span>Flotas</a>
+    <a href="#preguntas"><span>06</span>Preguntas</a>
+    <a href="#contacto"><span>07</span>Contacto</a>
+  </nav>
+  <div class="menu__actions">
+    <a class="btn btn--blue btn--block" data-wa="turno" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedí turno por WhatsApp</a>
+    <a class="btn btn--outline btn--block" href="tel:+5493512341761"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar: 351 234-1761</a>
+    <p class="menu__addr"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Av. Armada Argentina 269, B° Las Flores, Córdoba</p>
+  </div>
+</div>
+
 <main id="main">
 
-<!-- ============ HERO ============ -->
-<section class="hero dark" aria-labelledby="hero-t">
-  <canvas class="hero__field" aria-hidden="true"></canvas>
-  <div class="hero__glow" aria-hidden="true"></div>
-  <div class="hero__bands" aria-hidden="true"><i></i><i></i><i></i></div>
+<!-- ============ INICIO ============ -->
+<section class="hero" id="inicio" aria-labelledby="hero-t">
+  <div class="hero__bands" aria-hidden="true"><i></i><i></i></div>
   <div class="hero__in wrap">
     <div class="hero__copy">
-      <p class="eyebrow"><span class="dot"></span>Chapa · Pintura · Microbollos · Mecánica — Córdoba</p>
-      <h1 id="hero-t" class="hero__title" data-split>Precisión que <em>se ve.</em></h1>
-      <p class="hero__sub" data-reveal>Reparamos tu auto con procesos de calidad, tecnología de primera y una fecha de entrega confirmada desde el presupuesto.</p>
-      <div class="hero__ctas" data-reveal>
-        <a class="btn btn--white" data-wa="turno" data-magnet href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedí turno por WhatsApp</a>
-        <a class="btn btn--ghost" href="#seguros">Trabajamos con tu seguro</a>
+      <p class="eyebrow eyebrow--light">Chapa · Pintura · Microbollos · Mecánica — Córdoba</p>
+      <h1 id="hero-t" class="hero__title">Precisión que <em>se ve.</em></h1>
+      <p class="hero__sub">Reparamos tu auto con procesos de calidad, tecnología de primera y una fecha de entrega confirmada desde el presupuesto.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--white btn--lg" data-wa="turno" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedí turno por WhatsApp</a>
+        <a class="btn btn--ghost btn--lg" href="#seguros">Trabajamos con tu seguro</a>
       </div>
-      <ul class="chips" data-reveal>
+      <ul class="hero__chips">
         <li><!-- CONFIRMAR: vigencia ISO 9001 -->Procesos ISO 9001</li>
         <li>Áreas separadas</li>
         <li>Pintura Glasurit</li>
       </ul>
     </div>
-
-    <div class="scan" style="--x:38%" aria-label="Auto con un escaneo que muestra sus capas: chasis, pintura y color" role="img">
-      <div class="scan__floor" aria-hidden="true"></div>
-      <div class="scan__stage">
-        <img class="scan__car" src="assets/img/recorte-auto-estudio.webp" alt="" width="1019" height="640">
-        <div class="scan__wire" aria-hidden="true">
-          <img src="assets/img/recorte-auto-estudio.webp" alt="" width="1019" height="640">
-          <span class="scan__grid"></span>
-        </div>
-        <div class="scan__line" aria-hidden="true"><span></span></div>
-        <ul class="scan__tags" aria-hidden="true">
-          <li style="--tx:24%;--ty:62%" data-at="24"><b>Chasis</b>Medidas de fábrica · Cellete</li>
-          <li style="--tx:52%;--ty:30%" data-at="52"><b>Pintura</b>Glasurit · cabina cerrada</li>
-          <li style="--tx:76%;--ty:56%" data-at="76"><b>Color</b>Espectrofotómetro</li>
-        </ul>
-      </div>
-      <div class="scan__hud" aria-hidden="true">
-        <span>Escaneo</span><span class="scan__pct">038</span><span>/ 100</span>
-      </div>
+    <div class="hero__car">
+      <img src="assets/img/recorte-auto-estudio.webp" alt="Camioneta gris recién reparada" width="1019" height="640" fetchpriority="high">
     </div>
   </div>
-  <a class="hero__down" href="#servicios" aria-label="Bajar a servicios"><span></span></a>
-  <img class="pattern pattern--hero" src="assets/logo/patron-blanco.webp" alt="" aria-hidden="true" width="1600" height="369">
+  <img class="pattern" src="assets/logo/patron-blanco.webp" alt="" aria-hidden="true" width="1600" height="369">
 </section>
 
-<!-- ============ TICKER ============ -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__track">
-    <span>Chapa</span><i></i><span>Pintura</span><i></i><span>Microbollos</span><i></i><span>Mecánica integral</span><i></i><span>Cuidado estético</span><i></i><span>Flotas</span><i></i>
-    <span>Chapa</span><i></i><span>Pintura</span><i></i><span>Microbollos</span><i></i><span>Mecánica integral</span><i></i><span>Cuidado estético</span><i></i><span>Flotas</span><i></i>
-  </div>
-</div>
-
-<!-- ============ PRUEBAS ============ -->
-<section class="proof light" aria-label="Por qué Garage Service">
+<!-- ============ NOSOTROS ============ -->
+<section class="sec about" id="nosotros" aria-labelledby="about-t">
   <div class="wrap">
-    <div class="proof__grid">
-      <article class="stat" data-reveal data-spot>
-        <!-- CONFIRMAR: vigencia de la certificación ISO 9001 -->
-        <p class="stat__k">ISO 9001</p><p class="stat__v">Procesos de calidad</p>
-        <span class="stat__n">01</span>
-      </article>
-      <article class="stat" data-reveal data-spot>
-        <p class="stat__k">4 áreas</p><p class="stat__v">Mecánica, chapa, pintura y microbollos, separadas</p>
-        <span class="stat__n">02</span>
-      </article>
-      <article class="stat" data-reveal data-spot>
-        <p class="stat__k">Cellete</p><p class="stat__v">Chasis a medidas de fábrica</p>
-        <span class="stat__n">03</span>
-      </article>
-      <article class="stat" data-reveal data-spot>
-        <p class="stat__k">Glasurit</p><p class="stat__v">El color original</p>
-        <span class="stat__n">04</span>
-      </article>
+    <div class="about__grid">
+      <div class="about__text" data-reveal>
+        <p class="eyebrow">01 · Nosotros</p>
+        <h2 id="about-t">Un taller que trabaja <em>como una empresa.</em></h2>
+        <p class="lead">Garage Service es un taller de reparación integral en Córdoba. Mecánica, chapa, pintura y microbollos, cada uno en su propia área y con su propio equipo.</p>
+        <p>Trabajamos con un sistema de gestión interno que ordena todo el trabajo. Por eso podemos darte una fecha de entrega desde el presupuesto, y cumplirla.</p>
+        <ul class="checks checks--2">
+          <li>Presupuesto por escrito</li>
+          <li>Seguimiento de repuestos</li>
+          <li>Agenda de turnos</li>
+          <li>Control de procesos y tiempos</li>
+        </ul>
+        <p class="about__quote">“Nuestro objetivo es mejorar todo el tiempo, capacitando a todas las áreas.”</p>
+        <p class="next"><a class="link" href="#servicios">Mirá nuestros servicios <span aria-hidden="true">→</span></a></p>
+      </div>
+      <figure class="about__photo" data-reveal>
+        <img src="assets/img/asesor-tablet.webp" alt="Asesor del taller mostrándole a un cliente el estado de su auto en una tablet" loading="lazy" width="1344" height="768">
+      </figure>
     </div>
+
   </div>
 </section>
 
 <!-- ============ SERVICIOS ============ -->
-<section class="services light" id="servicios" aria-labelledby="serv-t">
+<section class="sec sec--white" id="servicios" aria-labelledby="serv-t">
   <div class="wrap">
-    <div class="head">
-      <p class="eyebrow eyebrow--blue"><span class="idx">01</span>Servicios</p>
-      <h2 id="serv-t" data-split>Todo tu auto, <em>en un solo lugar.</em></h2>
-      <p class="lead" data-reveal>Seis servicios en un mismo taller, cada uno con su equipo.</p>
+    <div class="head" data-reveal>
+      <p class="eyebrow">02 · Servicios</p>
+      <h2 id="serv-t">Todo tu auto, <em>en un solo lugar.</em></h2>
+      <p class="lead">Elegí el servicio y pedí turno directo por WhatsApp.</p>
     </div>
-
-    <div class="svc">
-      <div class="svc__media" aria-hidden="true">
-        <img class="is-on" src="assets/img/banco-estirado.webp" alt="" loading="lazy" width="1344" height="768">
-        <img src="assets/img/cabina-pintura.webp" alt="" loading="lazy" width="1344" height="768">
-        <img src="assets/img/granizo-pdr.webp" alt="" loading="lazy" width="1344" height="768">
-        <img src="assets/img/rueda-torque.webp" alt="" loading="lazy" width="1344" height="768">
-        <img src="assets/img/pulido.webp" alt="" loading="lazy" width="1344" height="768">
-        <img src="assets/img/taller-vacio.webp" alt="" loading="lazy" width="1344" height="768">
-        <span class="svc__frame"><i></i><i></i><i></i><i></i></span>
-        <span class="svc__label">01 / 06</span>
-      </div>
-      <ol class="svc__list">
-        <li class="svc__item is-on" data-reveal>
-          <img class="svc__thumb" src="assets/img/banco-estirado-sm.webp" alt="Técnico trabajando sobre un auto montado en un banco de estirado" loading="lazy" width="720" height="411">
-          <span class="svc__n">01</span><h3>Chapa</h3><p>Enderezado en banco Cellete, a las medidas de fábrica.</p>
-        </li>
-        <li class="svc__item" data-reveal>
-          <img class="svc__thumb" src="assets/img/cabina-pintura-sm.webp" alt="Pintor con equipo de protección dentro de una cabina de pintura" loading="lazy" width="720" height="411">
-          <span class="svc__n">02</span><h3>Pintura</h3><p>Glasurit en cabina cerrada: el color original de fábrica.</p>
-        </li>
-        <li class="svc__item" data-reveal>
-          <img class="svc__thumb" src="assets/img/granizo-pdr-sm.webp" alt="Manos con guantes sacando un bollo de granizo con una varilla" loading="lazy" width="720" height="411">
-          <span class="svc__n">03</span><h3>Microbollos</h3><p>Sacamos el granizo sin tocar la pintura.</p>
-        </li>
-        <li class="svc__item" data-reveal>
-          <img class="svc__thumb" src="assets/img/rueda-torque-sm.webp" alt="Ajuste de una rueda con herramienta de torque" loading="lazy" width="720" height="411">
-          <span class="svc__n">04</span><h3>Mecánica integral</h3><p>Service por kilómetros, preventivos y anual.</p>
-        </li>
-        <li class="svc__item" data-reveal>
-          <img class="svc__thumb" src="assets/img/pulido-sm.webp" alt="Pulido de una carrocería azul con máquina orbital" loading="lazy" width="720" height="411">
-          <span class="svc__n">05</span><h3>Cuidado estético</h3><p>Pulido de carrocería y llantas, tratamientos 3M.</p>
-        </li>
-        <li class="svc__item" data-reveal>
-          <img class="svc__thumb" src="assets/img/taller-vacio-sm.webp" alt="Taller blanco, ordenado y luminoso" loading="lazy" width="720" height="411">
-          <span class="svc__n">06</span><h3>Flotas</h3><p>Mantenimiento con fechas claras y un solo contacto.</p>
-        </li>
-      </ol>
-    </div>
-    <p class="next" data-reveal>¿No sabés qué servicio necesitás? <a href="#consulta">Armá tu consulta en 10 segundos <span aria-hidden="true">→</span></a></p>
-  </div>
-</section>
-
-<!-- ============ EL TALLER POR ÁREAS ============ -->
-<section class="areas dark" id="taller" aria-labelledby="areas-t">
-  <div class="wrap areas__in">
-    <div class="head">
-      <p class="eyebrow"><span class="idx">02</span>El taller</p>
-      <h2 id="areas-t" data-split>Cuatro áreas, <em>separadas.</em></h2>
-      <p class="lead" data-reveal>El polvo de chapa no llega a la pintura. Cada área tiene su equipo, sus herramientas y su espacio.</p>
-    </div>
-
-    <div class="plan" data-reveal>
-      <svg class="plan__svg" viewBox="0 0 690 420" role="img" aria-labelledby="plan-t">
-        <title id="plan-t">Plano del taller dividido en cuatro áreas: mecánica, chapa, pintura y microbollos</title>
-        <defs>
-          <pattern id="pgrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-opacity=".08"/></pattern>
-        </defs>
-        <rect width="690" height="420" fill="url(#pgrid)"/>
-        <g class="plan__cells" transform="translate(168 22) skewX(-22)">
-          <g class="cell" data-area="mecanica" tabindex="0" role="button" aria-label="Mecánica">
-            <rect x="0" y="0" width="250" height="180" rx="14"/>
-            <text x="22" y="40">01</text><text class="cell__name" x="22" y="152">Mecánica</text>
-          </g>
-          <g class="cell" data-area="chapa" tabindex="0" role="button" aria-label="Chapa">
-            <rect x="266" y="0" width="250" height="180" rx="14"/>
-            <text x="288" y="40">02</text><text class="cell__name" x="288" y="152">Chapa</text>
-            <g class="dust"></g>
-          </g>
-          <g class="cell" data-area="pintura" tabindex="0" role="button" aria-label="Pintura">
-            <rect x="0" y="196" width="250" height="180" rx="14"/>
-            <text x="22" y="236">03</text><text class="cell__name" x="22" y="348">Pintura</text>
-          </g>
-          <g class="cell" data-area="microbollos" tabindex="0" role="button" aria-label="Microbollos">
-            <rect x="266" y="196" width="250" height="180" rx="14"/>
-            <text x="288" y="236">04</text><text class="cell__name" x="288" y="348">Microbollos</text>
-          </g>
-          <path class="plan__wall" d="M258 -6V382M-6 188H522"/>
-        </g>
-      </svg>
-
-      <div class="plan__info">
-        <article class="area is-on" data-area="mecanica">
-          <p class="area__n">01 · Mecánica</p>
-          <h3>Diagnóstico con escaneo computarizado.</h3>
-          <ul class="checks"><li>Escaneo y diagnóstico de fallas</li><li>Service por kilómetros</li><li>Preventivo y anual</li></ul>
-        </article>
-        <article class="area" data-area="chapa">
-          <p class="area__n">02 · Chapa</p>
-          <h3>El chasis vuelve a sus medidas de fábrica.</h3>
-          <ul class="checks"><li>Banco de estirado Cellete</li><li>Medición del chasis</li><li>Área separada de pintura</li></ul>
-        </article>
-        <article class="area" data-area="pintura">
-          <p class="area__n">03 · Pintura</p>
-          <h3>El color original, medido.</h3>
-          <ul class="checks"><li>Pintura Glasurit y productos 3M</li><li>Laboratorio de colorimetría</li><li>Espectrofotómetro y cabina cerrada</li></ul>
-        </article>
-        <article class="area" data-area="microbollos">
-          <p class="area__n">04 · Microbollos</p>
-          <h3>Bollos fuera, pintura intacta.</h3>
-          <ul class="checks"><li>Reparación sin repintar</li><li>Daños por granizo</li><li>Con tu seguro o particular</li></ul>
-        </article>
-        <p class="plan__hint">Tocá un área del plano.</p>
-      </div>
-    </div>
-    <p class="next" data-reveal>¿Querés conocer el taller? <a data-wa="visita" href="https://wa.me/549351XXXXXXX">Coordiná una visita <span aria-hidden="true">→</span></a></p>
-  </div>
-</section>
-
-<!-- ============ PROCESO ============ -->
-<section class="process dark" id="proceso" aria-labelledby="proc-t">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow"><span class="idx">03</span>Proceso</p>
-      <h2 id="proc-t" data-split>Así se repara tu auto, <em>en cinco etapas.</em></h2>
-    </div>
-
-    <div class="proc">
-      <div class="proc__sticky">
-        <div class="order" aria-hidden="true">
-          <div class="order__top">
-            <span class="order__tag"><i></i>Orden de reparación</span>
-            <span class="order__stage"><b>01</b>/05</span>
-          </div>
-          <div class="order__car">
-            <img class="order__a" src="assets/img/recorte-auto-chocado.webp" alt="" loading="lazy" width="1050" height="669">
-            <img class="order__b" src="assets/img/recorte-auto-reparado.webp" alt="" loading="lazy" width="1130" height="728">
-            <span class="order__scan"></span>
-          </div>
-          <div class="order__bar"><span></span></div>
-          <ol class="order__steps">
-            <li>Recepción</li><li>Peritaje</li><li>Chapa</li><li>Pintura</li><li>Entrega</li>
-          </ol>
-          <p class="order__eta">Entrega confirmada · <b>desde el presupuesto</b></p>
+    <ul class="services">
+      <li class="svc card" data-reveal>
+        <img src="assets/img/banco-estirado-sm.webp" alt="Técnico trabajando sobre un auto montado en un banco de estirado" loading="lazy" width="720" height="411">
+        <div class="svc__body">
+          <h3>Chapa y carrocería</h3>
+          <p>Enderezado en banco Cellete, a las medidas de fábrica. También para autos con daños importantes.</p>
+          <a class="svc__link" data-wa="chapa" href="https://wa.me/549351XXXXXXX">Pedir turno <span aria-hidden="true">→</span></a>
         </div>
-      </div>
-
-      <ol class="steps">
-        <li class="step" data-step="1">
-          <span class="step__n">01</span>
-          <div><h3>Recepción</h3>
-          <ul class="checks"><li>Registro con fotos del estado</li><li>Presupuesto por escrito</li><li>Fecha de entrega estimada</li></ul></div>
-        </li>
-        <li class="step" data-step="2">
-          <span class="step__n">02</span>
-          <div><h3>Peritaje</h3>
-          <ul class="checks"><li>Coordinamos el turno del perito</li><li>Gestionamos la aprobación</li><li>Te avisamos al confirmar</li></ul></div>
-        </li>
-        <li class="step" data-step="3">
-          <span class="step__n">03</span>
-          <div><h3>Chapa</h3>
-          <ul class="checks"><li>Banco de estirado Cellete</li><li>Medición del chasis</li><li>Área separada de pintura</li></ul></div>
-        </li>
-        <li class="step" data-step="4">
-          <span class="step__n">04</span>
-          <div><h3>Pintura</h3>
-          <ul class="checks"><li>Pintura Glasurit</li><li>Cabina de pintura cerrada</li><li>Sin polvo de otras áreas</li></ul></div>
-        </li>
-        <li class="step" data-step="5">
-          <span class="step__n">05</span>
-          <div><h3>Entrega</h3>
-          <ul class="checks"><li>Pulido y control final</li><li>Te avisamos por WhatsApp</li><li>Retirás sin esperas</li></ul></div>
-        </li>
-      </ol>
-    </div>
+      </li>
+      <li class="svc card" data-reveal>
+        <img src="assets/img/cabina-pintura-sm.webp" alt="Pintor con equipo de protección dentro de una cabina de pintura" loading="lazy" width="720" height="411">
+        <div class="svc__body">
+          <h3>Pintura</h3>
+          <p>Glasurit en cabina cerrada y laboratorio de colorimetría: el color original de fábrica.</p>
+          <a class="svc__link" data-wa="pintura" href="https://wa.me/549351XXXXXXX">Pedir turno <span aria-hidden="true">→</span></a>
+        </div>
+      </li>
+      <li class="svc card" data-reveal>
+        <img src="assets/img/granizo-pdr-sm.webp" alt="Manos con guantes sacando un bollo de granizo con una varilla" loading="lazy" width="720" height="411">
+        <div class="svc__body">
+          <h3>Microbollos y granizo</h3>
+          <p>Sacamos los bollos sin tocar la pintura. Con tu seguro o particular.</p>
+          <a class="svc__link" data-wa="granizo" href="https://wa.me/549351XXXXXXX">Pedir turno <span aria-hidden="true">→</span></a>
+        </div>
+      </li>
+      <li class="svc card" data-reveal>
+        <img src="assets/img/inspeccion-pintura-sm.webp" alt="Mecánico revisando un auto en el taller" loading="lazy" width="720" height="411">
+        <div class="svc__body">
+          <h3>Mecánica integral</h3>
+          <p>Escaneo computarizado, diagnóstico de fallas y reparación de motor.</p>
+          <a class="svc__link" data-wa="mecanica" href="https://wa.me/549351XXXXXXX">Pedir turno <span aria-hidden="true">→</span></a>
+        </div>
+      </li>
+      <li class="svc card" data-reveal>
+        <img src="assets/img/rueda-torque-sm.webp" alt="Ajuste de una rueda con herramienta de torque" loading="lazy" width="720" height="411">
+        <div class="svc__body">
+          <h3>Service</h3>
+          <p>Por kilómetros (cada 10.000 o 15.000 km), preventivo y anual, antes del calor y de los viajes largos.</p>
+          <a class="svc__link" data-wa="service" href="https://wa.me/549351XXXXXXX">Pedir turno <span aria-hidden="true">→</span></a>
+        </div>
+      </li>
+      <li class="svc card" data-reveal>
+        <img src="assets/img/pulido-sm.webp" alt="Pulido de una carrocería azul con máquina orbital" loading="lazy" width="720" height="411">
+        <div class="svc__body">
+          <h3>Cuidado estético</h3>
+          <p>Pulido de carrocería y llantas, tratamientos 3M.</p>
+          <a class="svc__link" data-wa="estetica" href="https://wa.me/549351XXXXXXX">Pedir turno <span aria-hidden="true">→</span></a>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- ============ SEGUIMIENTO ============ -->
-<section class="track blue" aria-labelledby="track-t">
-  <div class="track__bands" aria-hidden="true"><i></i><i></i></div>
-  <div class="wrap track__in">
-    <div class="track__copy">
-      <p class="eyebrow"><span class="idx">04</span>Seguimiento</p>
-      <h2 id="track-t" data-split>Sabés en qué etapa está tu auto, <em>sin llamar.</em></h2>
-      <p class="lead" data-reveal>Te avisamos por WhatsApp cada vez que tu auto cambia de etapa. Como en un concesionario oficial, pero multimarca.</p>
-      <a class="btn btn--white" data-wa="turno" data-reveal href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedí turno</a>
+<!-- ============ EL TALLER ============ -->
+<section class="sec sec--ink" id="taller" aria-labelledby="areas-t">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="eyebrow eyebrow--soft">03 · El taller</p>
+      <h2 id="areas-t">Cuatro áreas, <em>separadas.</em></h2>
+      <p class="lead">El polvo de chapa no llega a la pintura. Cada área tiene su equipo, sus herramientas y su espacio.</p>
     </div>
-    <div class="phone" data-reveal>
-      <div class="phone__body">
-        <div class="phone__bar"><span class="phone__avatar"><img src="assets/logo/isotipo-blanco.svg" alt="" width="24" height="19"></span><div><b>Garage Service</b><small>en línea</small></div></div>
+    <div class="areas">
+      <article class="area" data-reveal>
+        <span class="area__n">01</span>
+        <h3>Chapa y carrocería</h3>
+        <ul class="checks"><li>Banco de estirado Cellete</li><li>Medición del chasis</li><li>Autos con daños importantes</li></ul>
+      </article>
+      <article class="area" data-reveal>
+        <span class="area__n">02</span>
+        <h3>Pintura</h3>
+        <ul class="checks"><li>Pintura Glasurit y productos 3M</li><li>Laboratorio de colorimetría</li><li>Espectrofotómetro Ratio Scan</li><li>Cabina de pintura cerrada</li></ul>
+      </article>
+      <article class="area" data-reveal>
+        <span class="area__n">03</span>
+        <h3>Microbollos</h3>
+        <ul class="checks"><li>Reparación sin repintar</li><li>Equipo para aseguradoras en temporada de granizo</li><li><!-- CONFIRMAR capacidad -->Hasta 10 autos por día (daño hasta grado 3)</li></ul>
+      </article>
+      <article class="area" data-reveal>
+        <span class="area__n">04</span>
+        <h3>Mecánica</h3>
+        <ul class="checks"><li>Escaneo computarizado</li><li>Diagnóstico de fallas</li><li>Reparación integral de motores</li></ul>
+      </article>
+    </div>
+    <p class="next next--ink" data-reveal>¿Querés conocer el taller? <a class="link" data-wa="visita" href="https://wa.me/549351XXXXXXX">Coordiná una visita <span aria-hidden="true">→</span></a></p>
+  </div>
+  <img class="pattern" src="assets/logo/patron-blanco.webp" alt="" aria-hidden="true" loading="lazy" width="1600" height="369">
+</section>
+
+<!-- ============ CÓMO TRABAJAMOS ============ -->
+<section class="sec" id="como-trabajamos" aria-labelledby="proc-t">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="eyebrow">04 · Cómo trabajamos</p>
+      <h2 id="proc-t">Así se repara tu auto, <em>en cinco etapas.</em></h2>
+      <p class="lead">Sin sorpresas. Y te avisamos en cada una.</p>
+    </div>
+    <ol class="steps">
+      <li class="step card" data-reveal>
+        <span class="step__n">01</span><h3>Recepción</h3>
+        <ul class="checks"><li>Registro con fotos del estado</li><li>Presupuesto por escrito</li><li>Fecha de entrega estimada</li></ul>
+      </li>
+      <li class="step card" data-reveal>
+        <span class="step__n">02</span><h3>Peritaje</h3>
+        <ul class="checks"><li>Coordinamos el turno del perito</li><li>Gestionamos la aprobación</li><li>Te avisamos al confirmar</li></ul>
+      </li>
+      <li class="step card" data-reveal>
+        <span class="step__n">03</span><h3>Chapa</h3>
+        <ul class="checks"><li>Banco de estirado Cellete</li><li>Medición del chasis</li><li>Área separada de pintura</li></ul>
+      </li>
+      <li class="step card" data-reveal>
+        <span class="step__n">04</span><h3>Pintura</h3>
+        <ul class="checks"><li>Pintura Glasurit</li><li>Cabina de pintura cerrada</li><li>Sin polvo de otras áreas</li></ul>
+      </li>
+      <li class="step card" data-reveal>
+        <span class="step__n">05</span><h3>Entrega</h3>
+        <ul class="checks"><li>Pulido y control final</li><li>Te avisamos por WhatsApp</li><li>Retirás sin esperas</li></ul>
+      </li>
+    </ol>
+
+    <div class="track" data-reveal>
+      <div class="track__copy">
+        <h3>Sabés en qué etapa está tu auto, <em>sin llamar.</em></h3>
+        <p>Te avisamos por WhatsApp cada vez que tu auto cambia de etapa. Como en un concesionario oficial, pero multimarca.</p>
+        <a class="btn btn--white" data-wa="turno" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedí turno</a>
+      </div>
+      <div class="phone">
+        <div class="phone__bar"><span class="phone__avatar"><img src="assets/logo/isotipo-blanco.svg" alt="" width="22" height="17"></span><div><b>Garage Service</b><small>en línea</small></div></div>
         <div class="chat" aria-label="Ejemplo de mensajes de seguimiento">
-          <p class="msg">Hola, Juan. Recibimos tu auto. Ya tenés el presupuesto por escrito.<time>09:12</time></p>
-          <p class="msg">Tu auto pasó a <b>Chapa</b>.<time>11:40</time></p>
-          <p class="msg">Tu auto pasó a <b>Pintura</b>.
-            <span class="msg__prog"><span><i style="width:80%"></i></span>Etapa 4 de 5</span><time>16:05</time></p>
+          <p class="msg">Hola, Juan. Tu auto pasó a <b>Chapa</b>.<time>11:40</time></p>
+          <p class="msg">Tu auto pasó a <b>Pintura</b>.<span class="msg__prog"><span><i></i></span>Etapa 4 de 5</span><time>16:05</time></p>
           <p class="msg">Entrega confirmada: <b>viernes, 18 h</b>.<time>16:06</time></p>
-          <p class="msg msg--me">¡Gracias! Paso el viernes.<time>16:20</time></p>
-          <p class="typing" aria-hidden="true"><i></i><i></i><i></i></p>
         </div>
+        <p class="phone__note">Mensajes de ejemplo</p>
       </div>
-      <p class="phone__note">Mensajes de ejemplo.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ SEGUROS ============ -->
-<section class="insure light" id="seguros" aria-labelledby="seg-t">
-  <div class="wrap insure__in">
-    <div class="head">
-      <p class="eyebrow eyebrow--blue"><span class="idx">05</span>Seguros</p>
-      <h2 id="seg-t" data-split>Tu seguro, <em>nuestro trámite.</em></h2>
-      <p class="lead" data-reveal>Vos traés el auto. Nosotros hablamos con la aseguradora.</p>
+<section class="sec sec--white" id="seguros" aria-labelledby="seg-t">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="eyebrow">05 · Seguros</p>
+      <h2 id="seg-t">Tu seguro, <em>nuestro trámite.</em></h2>
+      <p class="lead">Vos traés el auto. Nosotros hablamos con la aseguradora.</p>
     </div>
-    <div class="insure__grid">
+    <div class="insure">
       <ul class="toggles" data-reveal>
-        <li><span class="tg" aria-hidden="true"></span><div><b>Peritaje coordinado</b><small>Pedimos el turno del perito por vos.</small></div></li>
-        <li><span class="tg" aria-hidden="true"></span><div><b>Aviso en cada etapa</b><small>Por WhatsApp, sin que tengas que llamar.</small></div></li>
-        <li><span class="tg" aria-hidden="true"></span><div><b>Entrega en fecha</b><small>La fecha va escrita en el presupuesto.</small></div></li>
+        <li class="card"><span class="tg" aria-hidden="true"></span><div><b>Peritaje coordinado</b><span>Pedimos el turno del perito por vos.</span></div></li>
+        <li class="card"><span class="tg" aria-hidden="true"></span><div><b>Aviso en cada etapa</b><span>Por WhatsApp, sin que tengas que llamar.</span></div></li>
+        <li class="card"><span class="tg" aria-hidden="true"></span><div><b>Entrega en fecha</b><span>La fecha va escrita en el presupuesto.</span></div></li>
       </ul>
-      <div class="lookup" data-reveal>
-        <label for="aseg" class="lookup__l">¿Trabajan con mi seguro?</label>
-        <div class="lookup__field">
+      <div class="lookup card" data-reveal>
+        <h3>¿Trabajan con mi seguro?</h3>
+        <label class="sr" for="aseg">Escribí el nombre de tu aseguradora</label>
+        <div class="field">
           <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
-          <input id="aseg" type="text" placeholder="Escribí tu aseguradora" autocomplete="off" list="aseg-list">
+          <input id="aseg" type="text" placeholder="Escribí tu aseguradora" autocomplete="off">
         </div>
         <p class="lookup__res" aria-live="polite"></p>
-        <!-- CONFIRMAR: listado actual de aseguradoras -->
+        <!-- CONFIRMAR: listado actual (combina la web de 2017 y el Instagram) -->
         <ul class="insurers">
-          <li>Zurich</li><li>Allianz</li><li>San Cristóbal</li><li>La Segunda</li><li>Federación Patronal</li><li>El Norte</li><li>Mercantil Andina</li>
+          <li>Zurich</li><li>Allianz</li><li>Sancor Seguros</li><li>San Cristóbal</li><li>La Segunda</li><li>Federación Patronal</li><li>Mercantil Andina</li><li>El Norte</li><li>Berkley</li><li>Caruso</li>
         </ul>
-        <a class="btn btn--blue" data-wa="seguro" href="https://wa.me/549351XXXXXXX">Consultá tu cobertura</a>
+        <a class="btn btn--blue" data-wa="seguro" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Consultá tu cobertura</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ FLOTAS ============ -->
-<section class="fleet dark" id="flotas" aria-labelledby="flota-t">
+<section class="sec sec--ink fleet" id="flotas" aria-labelledby="flota-t">
   <img class="fleet__bg" src="assets/img/taller-vacio.webp" alt="" loading="lazy" width="1344" height="768">
-  <div class="wrap fleet__in">
-    <div class="head">
-      <p class="eyebrow"><span class="idx">06</span>Flotas y empresas</p>
-      <h2 id="flota-t" data-split>Tu flota, sin días <em>perdidos.</em></h2>
-      <p class="lead" data-reveal>Plazos claros para que tus unidades vuelvan a trabajar.</p>
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="eyebrow eyebrow--soft">06 · Flotas y empresas</p>
+      <h2 id="flota-t">Tu flota, sin días <em>perdidos.</em></h2>
+      <p class="lead">Mantenimiento con plazos claros para que tus unidades vuelvan a trabajar.</p>
     </div>
-    <div class="glass-grid">
-      <article class="glass" data-reveal data-spot><span class="glass__i">01</span><h3>Fecha de entrega confirmada</h3><p>Planificás sin la unidad desde el primer día.</p></article>
-      <article class="glass" data-reveal data-spot><span class="glass__i">02</span><h3>Un solo contacto para todo</h3><p>Una persona sigue todas tus unidades.</p></article>
-      <article class="glass" data-reveal data-spot><span class="glass__i">03</span><h3>Avisos por WhatsApp</h3><p>Sabés en qué etapa está cada vehículo.</p></article>
-    </div>
-    <a class="btn btn--white" data-wa="flota" data-magnet href="https://wa.me/549351XXXXXXX">Pedí una cotización</a>
+    <ul class="fleet__list">
+      <li data-reveal><b>Fecha de entrega confirmada</b><span>Planificás sin la unidad desde el primer día.</span></li>
+      <li data-reveal><b>Un solo contacto para todo</b><span>Una persona sigue todas tus unidades.</span></li>
+      <li data-reveal><b>Avisos por WhatsApp</b><span>Sabés en qué etapa está cada vehículo.</span></li>
+    </ul>
+    <a class="btn btn--white btn--lg" data-wa="flota" href="https://wa.me/549351XXXXXXX">Pedí una cotización</a>
   </div>
 </section>
 
 <!-- ============ ANTES / DESPUÉS ============ -->
-<section class="ba light" aria-labelledby="ba-t">
+<section class="sec" aria-labelledby="ba-t">
   <div class="wrap">
-    <div class="head head--row">
-      <div>
-        <p class="eyebrow eyebrow--blue"><span class="idx">07</span>Antes y después</p>
-        <h2 id="ba-t" data-split>Deslizá y <em>compará.</em></h2>
-      </div>
-      <p class="lead" data-reveal>Choque frontal · chapa y pintura</p>
+    <div class="head" data-reveal>
+      <p class="eyebrow">07 · Antes y después</p>
+      <h2 id="ba-t">Choque frontal, <em>chapa y pintura.</em></h2>
+      <p class="lead">Mové la barra para comparar.</p>
     </div>
     <figure class="compare" style="--p:50%" data-reveal>
       <img src="assets/img/auto-reparado.webp" alt="Después: el auto reparado, con la trompa y la pintura como de fábrica" loading="lazy" width="1344" height="768">
       <div class="compare__before"><img src="assets/img/auto-chocado.webp" alt="Antes: el auto con la trompa y el lateral chocados" loading="lazy" width="1344" height="768"></div>
       <span class="compare__tag compare__tag--a">Antes</span><span class="compare__tag compare__tag--b">Después</span>
-      <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Mostrar más del antes o del después">
+      <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Mover para comparar antes y después">
       <span class="compare__handle" aria-hidden="true"><i></i></span>
       <!-- Imágenes de referencia (Firefly): reemplazar por un trabajo real -->
-      <figcaption>Imágenes de referencia.</figcaption>
+      <figcaption>Imágenes de referencia</figcaption>
     </figure>
+    <p class="next" data-reveal>¿Tu auto necesita chapa y pintura? <a class="link" data-wa="chapa" href="https://wa.me/549351XXXXXXX">Pedí un presupuesto <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
 <!-- ============ GRANIZO ============ -->
-<section class="hail blue" aria-labelledby="hail-t">
-  <canvas class="hail__fx" aria-hidden="true"></canvas>
-  <div class="wrap hail__in">
+<section class="hail" aria-labelledby="hail-t">
+  <div class="wrap hail__in" data-reveal>
     <div>
-      <p class="eyebrow"><span class="idx">08</span>Granizo</p>
-      <h2 id="hail-t" data-split>¿Te agarró <em>el granizo?</em></h2>
-      <ul class="chips chips--light" data-reveal><li>Turnos inmediatos</li><li>Sin repintar</li><li>Con tu seguro</li></ul>
+      <p class="eyebrow eyebrow--light">08 · Granizo</p>
+      <h2 id="hail-t">¿Te agarró <em>el granizo?</em></h2>
+      <ul class="hero__chips"><li>Turnos inmediatos</li><li>Sin repintar</li><li>Con tu seguro</li></ul>
     </div>
-    <a class="btn btn--white" data-wa="granizo" data-magnet href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Escribinos por WhatsApp</a>
+    <a class="btn btn--white btn--lg" data-wa="granizo" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Escribinos por WhatsApp</a>
   </div>
   <img class="pattern" src="assets/logo/patron-blanco.webp" alt="" aria-hidden="true" loading="lazy" width="1600" height="369">
 </section>
 
-<!-- ============ CONSULTA EN 10 SEGUNDOS ============ -->
-<section class="quick dark" id="consulta" aria-labelledby="q-t">
+<!-- ============ PEDÍ TURNO ============ -->
+<section class="sec sec--white" id="turno" aria-labelledby="q-t">
   <div class="wrap">
-    <div class="head">
-      <p class="eyebrow"><span class="idx">09</span>Consulta en 10 segundos</p>
-      <h2 id="q-t" data-split>Elegís. Nosotros <em>armamos el mensaje.</em></h2>
-      <p class="lead" data-reveal>Tres toques y tu consulta llega lista por WhatsApp.</p>
+    <div class="head" data-reveal>
+      <p class="eyebrow">09 · Pedí turno</p>
+      <h2 id="q-t">Tu consulta, <em>en tres pasos.</em></h2>
+      <p class="lead">Elegí las opciones y te armamos el mensaje para WhatsApp.</p>
     </div>
-    <form class="qf" data-reveal novalidate>
+    <form class="qf" novalidate data-reveal>
       <div class="qf__steps">
-        <fieldset class="qf__set">
+        <fieldset class="qf__set card">
           <legend><span>1</span>¿Qué le pasó al auto?</legend>
           <div class="opts">
-            <label><input type="radio" name="dano" value="un choque"><span>Choque</span></label>
-            <label><input type="radio" name="dano" value="daño por granizo"><span>Granizo</span></label>
-            <label><input type="radio" name="dano" value="un rayón o detalle de pintura"><span>Rayón o pintura</span></label>
-            <label><input type="radio" name="dano" value="un problema mecánico"><span>Mecánica</span></label>
-            <label><input type="radio" name="dano" value="el service"><span>Service</span></label>
-            <label><input type="radio" name="dano" value="pulido o cuidado estético"><span>Estética</span></label>
+            <label><input type="radio" name="dano" value="choque"><span>Choque</span></label>
+            <label><input type="radio" name="dano" value="granizo"><span>Granizo</span></label>
+            <label><input type="radio" name="dano" value="pintura"><span>Rayón o pintura</span></label>
+            <label><input type="radio" name="dano" value="mecanica"><span>Mecánica</span></label>
+            <label><input type="radio" name="dano" value="service"><span>Service</span></label>
+            <label><input type="radio" name="dano" value="estetica"><span>Pulido / estética</span></label>
           </div>
         </fieldset>
-        <fieldset class="qf__set">
+        <fieldset class="qf__set card">
           <legend><span>2</span>¿Cómo lo hacés?</legend>
           <div class="opts">
             <label><input type="radio" name="via" value="seguro"><span>Con seguro</span></label>
@@ -465,57 +397,54 @@
             <label><input type="radio" name="via" value="flota"><span>Flota / empresa</span></label>
           </div>
           <div class="qf__ins" hidden>
-            <label for="q-aseg" class="sr">Aseguradora</label>
-            <input id="q-aseg" type="text" list="aseg-list" placeholder="¿Cuál es tu aseguradora?">
+            <label for="q-aseg">¿Cuál es tu aseguradora?</label>
+            <input id="q-aseg" type="text" placeholder="Ej.: Zurich">
           </div>
         </fieldset>
-        <fieldset class="qf__set">
+        <fieldset class="qf__set card">
           <legend><span>3</span>Tu auto</legend>
           <div class="qf__car">
-            <label class="sr" for="q-auto">Marca y modelo</label>
-            <input id="q-auto" type="text" placeholder="Marca y modelo">
-            <label class="sr" for="q-anio">Año</label>
-            <input id="q-anio" type="text" inputmode="numeric" maxlength="4" placeholder="Año">
+            <div><label for="q-auto">Marca y modelo</label><input id="q-auto" type="text" placeholder="Ej.: Toyota Corolla"></div>
+            <div><label for="q-anio">Año</label><input id="q-anio" type="text" inputmode="numeric" maxlength="4" placeholder="2019"></div>
           </div>
         </fieldset>
       </div>
       <div class="qf__out">
-        <div class="term">
-          <div class="term__bar"><i></i><i></i><i></i><span>Tu mensaje</span></div>
-          <p class="term__txt"><span class="term__body">Hola Garage Service, quiero hacer una consulta.</span><span class="caret" aria-hidden="true"></span></p>
-          <div class="term__meter"><span></span><small>0 de 3</small></div>
-          <p class="sr qf__live" aria-live="polite"></p>
-        </div>
-        <a class="btn btn--blue btn--block qf__send" data-wa="consulta" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp</a>
+        <p class="qf__label">Tu mensaje</p>
+        <div class="bubble"><p class="bubble__txt">Hola Garage Service, quiero hacer una consulta.</p></div>
+        <a class="btn btn--blue btn--lg btn--block qf__send" data-wa="consulta" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp</a>
+        <p class="qf__alt">¿Preferís llamar? <a href="tel:+5493512341761">351 234-1761</a></p>
       </div>
     </form>
   </div>
 </section>
 
 <!-- ============ PREGUNTAS ============ -->
-<section class="faq light" aria-labelledby="faq-t">
-  <div class="wrap faq__in">
-    <div class="head">
-      <p class="eyebrow eyebrow--blue"><span class="idx">10</span>Preguntas frecuentes</p>
-      <h2 id="faq-t" data-split>Lo que <em>más nos preguntan.</em></h2>
+<section class="sec" id="preguntas" aria-labelledby="faq-t">
+  <div class="wrap faq">
+    <div class="head" data-reveal>
+      <p class="eyebrow">10 · Preguntas frecuentes</p>
+      <h2 id="faq-t">Las dudas, <em>resueltas.</em></h2>
       <a class="btn btn--outline" data-wa="pregunta" href="https://wa.me/549351XXXXXXX">Hacé tu pregunta</a>
     </div>
     <div class="faq__list">
-      <details data-reveal><summary>¿Trabajan con mi seguro?</summary><p>Sí. Coordinamos el peritaje con tu aseguradora.</p></details>
-      <details data-reveal><summary>¿Cuándo me lo entregan?</summary><p>La fecha va escrita en el presupuesto.</p></details>
-      <details data-reveal><summary>¿Cómo sé en qué etapa está?</summary><p>Te avisamos por WhatsApp en cada paso.</p></details>
-      <details data-reveal><summary>¿Atienden cualquier marca?</summary><p>Sí, somos un taller multimarca.</p></details>
+      <details class="card"><summary>¿Trabajan con mi seguro?</summary><p>Sí. Coordinamos el peritaje con tu aseguradora. Podés consultar la tuya en la sección <a href="#seguros">Seguros</a>.</p></details>
+      <details class="card"><summary>¿Cuándo me lo entregan?</summary><p>La fecha va escrita en el presupuesto.</p></details>
+      <details class="card"><summary>¿Cómo sé en qué etapa está?</summary><p>Te avisamos por WhatsApp en cada paso.</p></details>
+      <details class="card"><summary>¿Atienden cualquier marca?</summary><p>Sí, somos un taller multimarca.</p></details>
+      <details class="card"><summary>¿Qué pintura usan?</summary><p>Glasurit, con el color original de fábrica. Lo medimos en nuestro laboratorio de colorimetría.</p></details>
+      <details class="card"><summary>¿Cada cuánto tengo que hacer el service?</summary><p>Cada 10.000 o 15.000 km, según tu auto. También hacemos service preventivo y anual.</p></details>
     </div>
   </div>
 </section>
 
 <!-- ============ INSTAGRAM ============ -->
-<section class="ig light" aria-labelledby="ig-t">
-  <div class="wrap head head--row">
-    <h2 id="ig-t" class="ig__t">@thegarageservice</h2>
-    <a class="link" href="https://www.instagram.com/thegarageservice/" target="_blank" rel="noopener">Seguinos en Instagram <span aria-hidden="true">↗</span></a>
+<section class="sec sec--white ig" aria-labelledby="ig-t">
+  <div class="wrap ig__head">
+    <h2 id="ig-t" class="ig__t">Seguinos en Instagram</h2>
+    <a class="link" href="https://www.instagram.com/thegarageservice/" target="_blank" rel="noopener">@thegarageservice <span aria-hidden="true">↗</span></a>
   </div>
-  <div class="ig__rail" tabindex="0" aria-label="Últimas publicaciones de Instagram">
+  <div class="ig__rail" tabindex="0" aria-label="Últimas publicaciones de Instagram (deslizá)">
     <img src="assets/ig/01-carrusel-portada.webp" alt="Publicación: Así se repara tu auto, en cinco etapas" loading="lazy" width="540" height="675">
     <img src="assets/ig/02-tecnologia-glasurit.webp" alt="Publicación: pintura Glasurit" loading="lazy" width="540" height="675">
     <img src="assets/ig/03-seguros.webp" alt="Publicación: trabajamos con tu seguro" loading="lazy" width="540" height="675">
@@ -523,31 +452,31 @@
     <img src="assets/ig/05-flotas.webp" alt="Publicación: flotas" loading="lazy" width="540" height="675">
     <img src="assets/ig/06-granizo.webp" alt="Publicación: granizo" loading="lazy" width="540" height="675">
     <img src="assets/ig/07-preguntas.webp" alt="Publicación: preguntas frecuentes" loading="lazy" width="540" height="675">
-    <img src="assets/ig/08-carrusel-etapa3.webp" alt="Publicación: etapa 3, chapa" loading="lazy" width="540" height="675">
     <img src="assets/ig/09-detalle-pulido.webp" alt="Publicación: detalle de pulido" loading="lazy" width="540" height="675">
   </div>
 </section>
 
 <!-- ============ CONTACTO ============ -->
-<section class="contact dark" id="contacto" aria-labelledby="c-t">
-  <div class="wrap contact__in">
-    <div>
-      <p class="eyebrow"><span class="idx">11</span>Contacto</p>
-      <h2 id="c-t" class="contact__t" data-split>Traé tu auto. <em>Te decimos cuándo vuelve.</em></h2>
-      <a class="btn btn--blue btn--lg" data-wa="turno" data-magnet href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedí turno por WhatsApp</a>
+<section class="sec sec--ink" id="contacto" aria-labelledby="c-t">
+  <div class="wrap contact">
+    <div data-reveal>
+      <p class="eyebrow eyebrow--soft">11 · Contacto</p>
+      <h2 id="c-t">Traé tu auto. <em>Te decimos cuándo vuelve.</em></h2>
+      <div class="contact__btns">
+        <a class="btn btn--blue btn--lg" data-wa="turno" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Pedí turno por WhatsApp</a>
+        <a class="btn btn--ghost btn--lg" href="tel:+5493512341761"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar</a>
+      </div>
     </div>
-    <div class="contact__card">
+    <div class="contact__card" data-reveal>
+      <!-- CONFIRMAR: teléfono y mail (web de 2017), WhatsApp y horarios -->
       <dl class="data">
-        <div><dt>Dirección</dt><dd>Armada Argentina 269<br>B° Las Flores, Córdoba</dd></div>
-        <!-- CONFIRMAR: WhatsApp, horarios y mail -->
-        <div><dt>WhatsApp</dt><dd><a data-wa="turno" href="https://wa.me/549351XXXXXXX">351 [___ ____]</a></dd></div>
-        <div><dt>Horarios</dt><dd>[Lunes a viernes, __ a __ h]</dd></div>
-        <div><dt>Mail</dt><dd>[confirmar mail]</dd></div>
-        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/thegarageservice/" target="_blank" rel="noopener">@thegarageservice</a></dd></div>
+        <div><dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Dirección</dt><dd>Av. Armada Argentina 269<br>B° Las Flores, Córdoba</dd></div>
+        <div><dt><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Teléfono</dt><dd><a href="tel:+5493512341761">351 234-1761</a></dd></div>
+        <div><dt><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Mail</dt><dd><a href="mailto:info@garageservice.com.ar">info@garageservice.com.ar</a></dd></div>
+        <div><dt><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Horarios</dt><dd>[Lunes a viernes, __ a __ h]</dd></div>
       </dl>
       <div class="map">
-        <button class="map__btn" type="button"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Ver mapa</button>
-        <p class="map__note">El mapa de Google se carga solo si lo pedís.</p>
+        <button class="btn btn--outline-light map__btn" type="button"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Ver mapa</button>
         <a class="link" href="https://www.google.com/maps/search/?api=1&query=Armada+Argentina+269+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener">Abrir en Google Maps <span aria-hidden="true">↗</span></a>
       </div>
     </div>
@@ -556,47 +485,35 @@
 
 </main>
 
-<footer class="footer dark">
+<footer class="footer">
   <div class="wrap footer__in">
-    <img src="assets/logo/logo-horizontal-blanco.svg" alt="Garage Service" width="210" height="33" loading="lazy">
-    <p>Chapa · Pintura · Microbollos · Mecánica integral · Córdoba</p>
-    <p class="footer__c">© <span class="yr">2026</span> Garage Service · Diseño: maximoromero.dg</p>
+    <img src="assets/logo/logo-horizontal-blanco.svg" alt="Garage Service" width="200" height="31" loading="lazy">
+    <nav class="footer__nav" aria-label="Pie de página">
+      <a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#como-trabajamos">Cómo trabajamos</a><a href="#seguros">Seguros</a><a href="#flotas">Flotas</a><a href="#contacto">Contacto</a>
+    </nav>
+    <p class="footer__social"><a href="https://www.instagram.com/thegarageservice/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/garageservicecba" target="_blank" rel="noopener">Facebook</a></p>
+    <p class="footer__c">© <span class="yr">2026</span> Garage Service · Av. Armada Argentina 269, Córdoba</p>
   </div>
-  <img class="pattern" src="assets/logo/patron-blanco.webp" alt="" aria-hidden="true" loading="lazy" width="1600" height="369">
 </footer>
 
-<nav class="dock" aria-label="Acciones rápidas">
+<nav class="dock" aria-label="Contacto rápido">
   <a data-wa="turno" href="https://wa.me/549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
-  <a href="tel:+549351XXXXXXX"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar</a>
+  <a href="tel:+5493512341761"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar</a>
 </nav>
 <a class="fab" data-wa="turno" href="https://wa.me/549351XXXXXXX" aria-label="Escribinos por WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg></a>
 
-<div class="cursor" aria-hidden="true"></div>
-
-<datalist id="aseg-list">
-  <option value="Zurich"><option value="Allianz"><option value="San Cristóbal"><option value="La Segunda"><option value="Federación Patronal"><option value="El Norte"><option value="Mercantil Andina">
-</datalist>
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <filter id="wire" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-    <feColorMatrix in="SourceGraphic" type="saturate" values="0" result="g"/>
-    <feConvolveMatrix in="g" order="3" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" preserveAlpha="true" result="e"/>
-    <feColorMatrix in="e" type="matrix" values="0 0 0 0 .62  0 0 0 0 .75  0 0 0 0 1  2.6 2.6 2.6 0 0" result="c"/>
-    <feComposite in="c" in2="SourceAlpha" operator="in"/>
-  </filter>
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6.6 3h2.6l1.5 4.2-2 1.3a11 11 0 0 0 6.8 6.8l1.3-2 4.2 1.5v2.6A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m20 20-4.2-4.2M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Zm0-9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 6.5h17v11h-17zM4 7l8 6 8-6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></symbol>
 </svg>
 
 <template id="intro-tpl">
 <div class="intro" role="presentation">
-  <div class="intro__grid"></div>
-  <div class="intro__corners"><i></i><i></i><i></i><i></i></div>
-  <div class="intro__stage">
-    <svg class="intro__logo" viewBox="195.27 384.59 1228.28 190.90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<defs>
+  <div class="intro__stage"><svg class="intro__logo" viewBox="195.27 384.59 1228.28 190.90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
 <g>
 <g id="ig-0-0">
 <path d="M 78.484375 -67.21875 C 76.046875 -71.925781 72.648438 -75.476562 68.296875 -77.875 C 63.953125 -80.28125 58.929688 -81.484375 53.234375 -81.484375 C 46.984375 -81.484375 41.414062 -80.078125 36.53125 -77.265625 C 31.644531 -74.460938 27.816406 -70.476562 25.046875 -65.3125 C 22.285156 -60.15625 20.90625 -54.179688 20.90625 -47.390625 C 20.90625 -40.597656 22.285156 -34.597656 25.046875 -29.390625 C 27.816406 -24.191406 31.644531 -20.1875 36.53125 -17.375 C 41.414062 -14.570312 46.984375 -13.171875 53.234375 -13.171875 C 61.648438 -13.171875 68.484375 -15.523438 73.734375 -20.234375 C 78.984375 -24.941406 82.195312 -31.320312 83.375 -39.375 L 47.9375 -39.375 L 47.9375 -51.734375 L 99.953125 -51.734375 L 99.953125 -39.65625 C 98.953125 -32.320312 96.347656 -25.578125 92.140625 -19.421875 C 87.929688 -13.265625 82.453125 -8.351562 75.703125 -4.6875 C 68.960938 -1.019531 61.472656 0.8125 53.234375 0.8125 C 44.359375 0.8125 36.253906 -1.242188 28.921875 -5.359375 C 21.585938 -9.484375 15.769531 -15.210938 11.46875 -22.546875 C 7.175781 -29.878906 5.03125 -38.160156 5.03125 -47.390625 C 5.03125 -56.628906 7.175781 -64.914062 11.46875 -72.25 C 15.769531 -79.582031 21.609375 -85.304688 28.984375 -89.421875 C 36.367188 -93.535156 44.453125 -95.59375 53.234375 -95.59375 C 63.285156 -95.59375 72.222656 -93.125 80.046875 -88.1875 C 87.878906 -83.257812 93.5625 -76.269531 97.09375 -67.21875 Z M 78.484375 -67.21875 "/>
@@ -628,17 +545,9 @@
 <path d="M 5.03125 -37.484375 C 5.03125 -45.171875 6.585938 -51.9375 9.703125 -57.78125 C 12.828125 -63.625 17.148438 -68.128906 22.671875 -71.296875 C 28.203125 -74.460938 34.539062 -76.046875 41.6875 -76.046875 C 50.738281 -76.046875 58.226562 -73.894531 64.15625 -69.59375 C 70.09375 -65.289062 74.101562 -59.160156 76.1875 -51.203125 L 59.484375 -51.203125 C 58.117188 -54.910156 55.941406 -57.804688 52.953125 -59.890625 C 49.972656 -61.972656 46.21875 -63.015625 41.6875 -63.015625 C 35.351562 -63.015625 30.304688 -60.769531 26.546875 -56.28125 C 22.785156 -51.800781 20.90625 -45.535156 20.90625 -37.484375 C 20.90625 -29.421875 22.785156 -23.125 26.546875 -18.59375 C 30.304688 -14.070312 35.351562 -11.8125 41.6875 -11.8125 C 50.65625 -11.8125 56.585938 -15.75 59.484375 -23.625 L 76.1875 -23.625 C 74.007812 -16.019531 69.929688 -9.976562 63.953125 -5.5 C 57.984375 -1.019531 50.5625 1.21875 41.6875 1.21875 C 34.539062 1.21875 28.203125 -0.382812 22.671875 -3.59375 C 17.148438 -6.8125 12.828125 -11.335938 9.703125 -17.171875 C 6.585938 -23.015625 5.03125 -29.785156 5.03125 -37.484375 Z M 5.03125 -37.484375 "/>
 </g>
 </g>
-
-<clipPath id="ic-arm"><rect x="308" y="470" width="140" height="56.9"/></clipPath>
-<clipPath id="ic-body"><rect x="180" y="526.77" width="270" height="60"/><rect x="180" y="420" width="128" height="170"/></clipPath>
-</defs>
-<g class="intro__iso"><g class="pc pc--grey"><g><path class="pc__f" d="M 333.136719 386.59375 L 234.394531 386.59375 C 227.691406 386.59375 223.203125 393.480469 225.910156 399.609375 L 240.785156 433.316406 L 353.757812 433.316406 Z M 333.136719 386.59375 "/><path class="pc__s" pathLength="1" d="M 333.136719 386.59375 L 234.394531 386.59375 C 227.691406 386.59375 223.203125 393.480469 225.910156 399.609375 L 240.785156 433.316406 L 353.757812 433.316406 Z M 333.136719 386.59375 "/></g></g><g class="pc pc--body"><g clip-path="url(#ic-body)"><path class="pc__f" d="M 345.917969 526.769531 L 435.433594 526.625 L 414.8125 479.898438 L 326.25 480.042969 C 319.765625 480.042969 315.421875 486.707031 318.039062 492.640625 L 333.101562 526.769531 L 295.847656 526.769531 C 287.449219 526.769531 279.839844 521.808594 276.445312 514.125 L 240.785156 433.316406 L 211.457031 433.316406 C 201.21875 433.316406 194.359375 443.84375 198.492188 453.210938 L 251.574219 573.492188 L 353.722656 573.492188 L 338.277344 538.496094 C 335.839844 532.972656 339.882812 526.769531 345.917969 526.769531 "/><path class="pc__s" pathLength="1" d="M 345.917969 526.769531 L 435.433594 526.625 L 414.8125 479.898438 L 326.25 480.042969 C 319.765625 480.042969 315.421875 486.707031 318.039062 492.640625 L 333.101562 526.769531 L 295.847656 526.769531 C 287.449219 526.769531 279.839844 521.808594 276.445312 514.125 L 240.785156 433.316406 L 211.457031 433.316406 C 201.21875 433.316406 194.359375 443.84375 198.492188 453.210938 L 251.574219 573.492188 L 353.722656 573.492188 L 338.277344 538.496094 C 335.839844 532.972656 339.882812 526.769531 345.917969 526.769531 "/></g></g><g class="pc pc--arm"><g clip-path="url(#ic-arm)"><path class="pc__f" d="M 345.917969 526.769531 L 435.433594 526.625 L 414.8125 479.898438 L 326.25 480.042969 C 319.765625 480.042969 315.421875 486.707031 318.039062 492.640625 L 333.101562 526.769531 L 295.847656 526.769531 C 287.449219 526.769531 279.839844 521.808594 276.445312 514.125 L 240.785156 433.316406 L 211.457031 433.316406 C 201.21875 433.316406 194.359375 443.84375 198.492188 453.210938 L 251.574219 573.492188 L 353.722656 573.492188 L 338.277344 538.496094 C 335.839844 532.972656 339.882812 526.769531 345.917969 526.769531 "/><path class="pc__s" pathLength="1" d="M 345.917969 526.769531 L 435.433594 526.625 L 414.8125 479.898438 L 326.25 480.042969 C 319.765625 480.042969 315.421875 486.707031 318.039062 492.640625 L 333.101562 526.769531 L 295.847656 526.769531 C 287.449219 526.769531 279.839844 521.808594 276.445312 514.125 L 240.785156 433.316406 L 211.457031 433.316406 C 201.21875 433.316406 194.359375 443.84375 198.492188 453.210938 L 251.574219 573.492188 L 353.722656 573.492188 L 338.277344 538.496094 C 335.839844 532.972656 339.882812 526.769531 345.917969 526.769531 "/></g></g></g>
-<g class="intro__word"><use class="l" style="--i:0" href="#ig-0-0" x="488.247964" y="526.978494"/><use class="l" style="--i:1" href="#ig-0-1" x="585.067859" y="526.978494"/><use class="l" style="--i:2" href="#ig-0-2" x="668.987487" y="526.978494"/><use class="l" style="--i:3" href="#ig-0-1" x="712.984186" y="526.978494"/><use class="l" style="--i:4" href="#ig-0-3" x="794.187969" y="526.978494"/><use class="l" style="--i:5" href="#ig-0-4" x="875.391752" y="526.978494"/><use class="l" style="--i:6" href="#ig-0-5" x="945.59636" y="526.978494"/><use class="l" style="--i:7" href="#ig-0-6" x="980.902352" y="526.978494"/><use class="l" style="--i:8" href="#ig-0-4" x="1052.057507" y="526.978494"/><use class="l" style="--i:9" href="#ig-0-2" x="1127.693806" y="526.978494"/><use class="l" style="--i:10" href="#ig-0-7" x="1177.122196" y="526.978494"/><use class="l" style="--i:11" href="#ig-0-8" x="1244.475166" y="526.978494"/><use class="l" style="--i:12" href="#ig-0-9" x="1269.460945" y="526.978494"/><use class="l" style="--i:13" href="#ig-0-4" x="1342.788776" y="526.978494"/></g>
-</svg>
-    <span class="intro__axis"><em>22°</em></span>
-  </div>
-  <div class="intro__status"><span class="intro__msg">Calibrando · medidas de fábrica</span><span class="intro__bar"><i></i></span><span class="intro__pct">000</span></div>
-  <button class="intro__skip" type="button">Saltar intro</button>
+<clipPath id="ic-arm"><rect x="308" y="470" width="140" height="56.9"/></clipPath><clipPath id="ic-body"><rect x="180" y="526.77" width="270" height="60"/><rect x="180" y="420" width="128" height="170"/></clipPath></defs><g class="intro__iso"><g class="pc pc--grey"><g><path class="pc__f" d="M 333.136719 386.59375 L 234.394531 386.59375 C 227.691406 386.59375 223.203125 393.480469 225.910156 399.609375 L 240.785156 433.316406 L 353.757812 433.316406 Z M 333.136719 386.59375 "/><path class="pc__s" pathLength="1" d="M 333.136719 386.59375 L 234.394531 386.59375 C 227.691406 386.59375 223.203125 393.480469 225.910156 399.609375 L 240.785156 433.316406 L 353.757812 433.316406 Z M 333.136719 386.59375 "/></g></g><g class="pc pc--body"><g clip-path="url(#ic-body)"><path class="pc__f" d="M 345.917969 526.769531 L 435.433594 526.625 L 414.8125 479.898438 L 326.25 480.042969 C 319.765625 480.042969 315.421875 486.707031 318.039062 492.640625 L 333.101562 526.769531 L 295.847656 526.769531 C 287.449219 526.769531 279.839844 521.808594 276.445312 514.125 L 240.785156 433.316406 L 211.457031 433.316406 C 201.21875 433.316406 194.359375 443.84375 198.492188 453.210938 L 251.574219 573.492188 L 353.722656 573.492188 L 338.277344 538.496094 C 335.839844 532.972656 339.882812 526.769531 345.917969 526.769531 "/><path class="pc__s" pathLength="1" d="M 345.917969 526.769531 L 435.433594 526.625 L 414.8125 479.898438 L 326.25 480.042969 C 319.765625 480.042969 315.421875 486.707031 318.039062 492.640625 L 333.101562 526.769531 L 295.847656 526.769531 C 287.449219 526.769531 279.839844 521.808594 276.445312 514.125 L 240.785156 433.316406 L 211.457031 433.316406 C 201.21875 433.316406 194.359375 443.84375 198.492188 453.210938 L 251.574219 573.492188 L 353.722656 573.492188 L 338.277344 538.496094 C 335.839844 532.972656 339.882812 526.769531 345.917969 526.769531 "/></g></g><g class="pc pc--arm"><g clip-path="url(#ic-arm)"><path class="pc__f" d="M 345.917969 526.769531 L 435.433594 526.625 L 414.8125 479.898438 L 326.25 480.042969 C 319.765625 480.042969 315.421875 486.707031 318.039062 492.640625 L 333.101562 526.769531 L 295.847656 526.769531 C 287.449219 526.769531 279.839844 521.808594 276.445312 514.125 L 240.785156 433.316406 L 211.457031 433.316406 C 201.21875 433.316406 194.359375 443.84375 198.492188 453.210938 L 251.574219 573.492188 L 353.722656 573.492188 L 338.277344 538.496094 C 335.839844 532.972656 339.882812 526.769531 345.917969 526.769531 "/><path class="pc__s" pathLength="1" d="M 345.917969 526.769531 L 435.433594 526.625 L 414.8125 479.898438 L 326.25 480.042969 C 319.765625 480.042969 315.421875 486.707031 318.039062 492.640625 L 333.101562 526.769531 L 295.847656 526.769531 C 287.449219 526.769531 279.839844 521.808594 276.445312 514.125 L 240.785156 433.316406 L 211.457031 433.316406 C 201.21875 433.316406 194.359375 443.84375 198.492188 453.210938 L 251.574219 573.492188 L 353.722656 573.492188 L 338.277344 538.496094 C 335.839844 532.972656 339.882812 526.769531 345.917969 526.769531 "/></g></g></g><g class="intro__word"><use class="l" style="--i:0" href="#ig-0-0" x="488.247964" y="526.978494"/><use class="l" style="--i:1" href="#ig-0-1" x="585.067859" y="526.978494"/><use class="l" style="--i:2" href="#ig-0-2" x="668.987487" y="526.978494"/><use class="l" style="--i:3" href="#ig-0-1" x="712.984186" y="526.978494"/><use class="l" style="--i:4" href="#ig-0-3" x="794.187969" y="526.978494"/><use class="l" style="--i:5" href="#ig-0-4" x="875.391752" y="526.978494"/><use class="l" style="--i:6" href="#ig-0-5" x="945.59636" y="526.978494"/><use class="l" style="--i:7" href="#ig-0-6" x="980.902352" y="526.978494"/><use class="l" style="--i:8" href="#ig-0-4" x="1052.057507" y="526.978494"/><use class="l" style="--i:9" href="#ig-0-2" x="1127.693806" y="526.978494"/><use class="l" style="--i:10" href="#ig-0-7" x="1177.122196" y="526.978494"/><use class="l" style="--i:11" href="#ig-0-8" x="1244.475166" y="526.978494"/><use class="l" style="--i:12" href="#ig-0-9" x="1269.460945" y="526.978494"/><use class="l" style="--i:13" href="#ig-0-4" x="1342.788776" y="526.978494"/></g></svg></div>
+  <p class="intro__tag">Precisión que se ve.</p>
+  <button class="intro__skip" type="button">Saltar</button>
 </div>
 </template>
 

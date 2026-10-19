@@ -11,7 +11,7 @@ y entrá a http://127.0.0.1:8790
 ## Archivos
 - `index.html` — estructura y textos (voseo). La intro está en `<template id="intro-tpl">`.
 - `styles.css` — tokens de marca, secciones, intro, ajustes móvil y movimiento reducido.
-- `main.js` — WhatsApp (`WA_NUMBER`), campo interactivo del hero, escáner del auto, plano del taller, proceso, chat, buscador de seguros, antes/después, granizo, consulta en 10 segundos, mapa, cursor.
+- `main.js` — WhatsApp (`WA_NUMBER`), menú del celular, buscador de seguros, antes/después, armador del mensaje de turno, mapa.
 - `intro.js` — animación del logo (primera visita de la sesión). `?intro` la fuerza, `?nointro` la saltea.
 - `assets/` — fotos WebP, recortes de autos, logos SVG recortados y en blanco, patrón, favicon y `og.jpg`.
 - `TODO.md` — datos a confirmar antes de publicar.

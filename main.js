@@ -177,4 +177,137 @@
     f.title = 'Mapa: Av. Armada Argentina 269, Córdoba'; f.loading = 'lazy';
     mapBtn.parentElement.append(f);
   });
+
+  // =====================================================================
+  // Movimiento
+  // =====================================================================
+  const FINE = matchMedia('(pointer: fine)').matches;
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  // ----- Hero: entra cuando se va la portada (o enseguida si no hay) -----
+  const showHero = () => hero.classList.add('in');
+  if (root.classList.contains('intro-on')) {
+    addEventListener('intro:reveal', showHero, { once: true });
+    addEventListener('intro:done', showHero, { once: true });
+  } else requestAnimationFrame(() => requestAnimationFrame(showHero));
+
+  // ----- Títulos: palabra por palabra -----
+  $$('[data-split]').forEach(el => {
+    let i = 0;
+    el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
+    const walk = node => [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const f = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) return f.append(' ');
+          const w = document.createElement('span'); w.className = 'w'; w.setAttribute('aria-hidden', 'true');
+          const s = document.createElement('span'); s.textContent = part; s.style.setProperty('--i', i++);
+          w.append(s); f.append(w);
+        });
+        n.replaceWith(f);
+      } else if (n.nodeType === 1) walk(n);
+    });
+    walk(el);
+  });
+
+  // ----- Progreso de lectura, parallax del hero y de flotas (un solo rAF) -----
+  const car = $('.hero__car'), bands = $('.hero__bands'), fleetBg = $('.fleet__bg'), fleet = $('#flotas');
+  let ptrX = 0, ptrY = 0, cx = 0, cy = 0, ticking = false;
+  const frame = () => {
+    ticking = false;
+    const y = scrollY, max = root.scrollHeight - innerHeight;
+    header.style.setProperty('--sp', max > 0 ? (y / max).toFixed(4) : 0);
+    if (!RM) {
+      const hh = hero.offsetHeight;
+      if (y < hh) {
+        cx = lerp(cx, ptrX, 0.08); cy = lerp(cy, ptrY, 0.08);
+        car.style.setProperty('--cx', (cx * 14).toFixed(2) + 'px');
+        car.style.setProperty('--cy', (cy * 8 + y * 0.12).toFixed(2) + 'px');
+        bands.style.setProperty('--bx', (cx * -18 + y * -0.08).toFixed(2) + 'px');
+        if (Math.abs(cx - ptrX) > 0.002 || Math.abs(cy - ptrY) > 0.002) req();
+      }
+      if (fleet) {
+        const r = fleet.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < innerHeight) fleetBg.style.setProperty('--py', ((r.top + r.height / 2 - innerHeight / 2) * -0.12).toFixed(1) + 'px');
+      }
+    }
+  };
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', req, { passive: true }); req();
+  if (FINE && !RM) hero.addEventListener('pointermove', e => {
+    ptrX = e.clientX / innerWidth - 0.5; ptrY = (e.clientY - hero.getBoundingClientRect().top) / hero.offsetHeight - 0.5; req();
+  });
+
+  // ----- Patrón de la G que aparece con el cursor en los espacios claros -----
+  if (FINE && !RM) {
+    const secs = $$('.sec:not(.sec--ink)');
+    secs.forEach(s => { const g = document.createElement('div'); g.className = 'gpat off'; g.setAttribute('aria-hidden', 'true'); s.prepend(g); s._g = g; });
+    let cur = null, mx = -999, my = -999, gx = -999, gy = -999, live = false;
+    const step = () => {
+      if (!cur) { live = false; return; }
+      gx = lerp(gx, mx, 0.12); gy = lerp(gy, my, 0.12);
+      const r = cur.getBoundingClientRect();
+      cur._g.style.setProperty('--mx', (gx - r.left).toFixed(1) + 'px');
+      cur._g.style.setProperty('--my', (gy - r.top).toFixed(1) + 'px');
+      requestAnimationFrame(step);
+    };
+    addEventListener('pointermove', e => {
+      const s = e.target.closest && e.target.closest('.sec:not(.sec--ink)');
+      if (s !== cur) {
+        if (cur) cur._g.classList.add('off');
+        cur = s;
+        if (cur) { cur._g.classList.remove('off'); if (gx < -900) { gx = e.clientX; gy = e.clientY; } }
+      }
+      mx = e.clientX; my = e.clientY;
+      if (cur && !live) { live = true; requestAnimationFrame(step); }
+    }, { passive: true });
+    document.addEventListener('pointerleave', () => { if (cur) cur._g.classList.add('off'); cur = null; });
+  }
+
+  // ----- Tarjetas que siguen la luz del cursor -----
+  if (FINE) $$('[data-spot]').forEach(el => el.addEventListener('pointermove', e => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--sx', `${e.clientX - r.left}px`); el.style.setProperty('--sy', `${e.clientY - r.top}px`);
+  }));
+
+  // ----- Botones grandes con leve atracción al cursor -----
+  if (FINE && !RM) $$('.btn--lg, .header__cta').forEach(b => {
+    b.addEventListener('pointermove', e => {
+      const r = b.getBoundingClientRect();
+      b.style.transform = `translate(${((e.clientX - r.left) / r.width - 0.5) * 8}px,${((e.clientY - r.top) / r.height - 0.5) * 6}px)`;
+    });
+    b.addEventListener('pointerleave', () => (b.style.transform = ''));
+  });
+
+  // ----- Proceso: se ilumina etapa por etapa -----
+  const stepsEl = $('.steps'), stepsBar = $('.steps__bar'), stepItems = $$('.step');
+  if (stepsEl) {
+    const lit = () => {
+      stepsBar.style.setProperty('--k', 1);
+      stepItems.forEach((s, i) => setTimeout(() => {
+        stepItems.forEach(o => o.classList.remove('now'));
+        s.classList.add('lit', 'now');
+        if (i === stepItems.length - 1) setTimeout(() => s.classList.remove('now'), 900);
+      }, RM ? 0 : 250 + i * 380));
+    };
+    const sio = new IntersectionObserver(([e]) => { if (e.isIntersecting) { sio.disconnect(); lit(); } }, { threshold: 0.35 });
+    sio.observe(stepsEl);
+  }
+
+  // ----- Chat: escribe y llegan los mensajes -----
+  const chat = $('.chat');
+  if (chat) {
+    const msgs = $$('.msg', chat), typing = $('.typing', chat);
+    const cio = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return; cio.disconnect();
+      if (RM) return msgs.forEach(m => m.classList.add('on'));
+      let t = 300;
+      msgs.forEach(m => {
+        setTimeout(() => { chat.insertBefore(typing, m); typing.classList.add('on'); }, t); t += 800;
+        setTimeout(() => { typing.classList.remove('on'); m.classList.add('on'); }, t); t += 450;
+      });
+    }, { threshold: 0.5 });
+    cio.observe(chat);
+  }
 })();

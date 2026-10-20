@@ -12,7 +12,7 @@ y entrá a http://127.0.0.1:8790
 - `index.html` — estructura y textos (voseo). La intro está en `<template id="intro-tpl">`.
 - `styles.css` — tokens de marca, secciones, intro, ajustes móvil y movimiento reducido.
 - `main.js` — WhatsApp (`WA_NUMBER`), menú del celular, buscador de seguros, antes/después, armador del mensaje de turno, mapa.
-- `intro.js` — animación del logo (primera visita de la sesión). `?intro` la fuerza, `?nointro` la saltea.
+- `intro.js` — portada: el logo se arma y queda quieto hasta que deslizás, tocás o usás el teclado; ahí sube como una cortina. Aparece en cada visita (no con links `#sección` ni con movimiento reducido). `?nointro` la saltea.
 - `assets/` — fotos WebP, recortes de autos, logos SVG recortados y en blanco, patrón, favicon y `og.jpg`.
 - `TODO.md` — datos a confirmar antes de publicar.
 
